@@ -1,0 +1,73 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ea475a95",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "    A   B  C\n",
+      "0   1  18  y\n",
+      "1   2  79  z\n",
+      "2   3  68  y\n",
+      "3   4  49  z\n",
+      "4   5  48  y\n",
+      "5   6  87  z\n",
+      "6   7  17  y\n",
+      "7   8  72  w\n",
+      "8   9  28  z\n",
+      "9  10  18  x\n",
+      "Subset has 1 rows.\n"
+     ]
+    }
+   ],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "\n",
+    "# Create a random number generator with a seed\n",
+    "rng = np.random.default_rng(seed=42)\n",
+    "\n",
+    "# Create a test 10x3 dataframe\n",
+    "df = pd.DataFrame({\n",
+    "    \"A\": np.arange(1, 11),\n",
+    "    \"B\": rng.integers(10, 100, size=10),\n",
+    "    \"C\": rng.choice([\"w\", \"x\", \"y\", \"z\"], size=10)\n",
+    "})\n",
+    "\n",
+    "print(df)\n",
+    "\n",
+    "# Select rows subset\n",
+    "subset = df[df['C'] == 'w']\n",
+    "\n",
+    "print(\"Subset has\", len(subset), \"rows.\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "EDS-220 env",
+   "language": "python",
+   "name": "eds220-env",
+   "path": "/Users/carmengalazgarcia/Library/Jupyter/kernels/eds220-env"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

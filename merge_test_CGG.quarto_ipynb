@@ -1,0 +1,42 @@
+{
+  "cells": [
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "\n",
+        "# Create a random number generator with a seed\n",
+        "rng = np.random.default_rng(seed=42)\n",
+        "\n",
+        "# Create a test 10x3 dataframe\n",
+        "df = pd.DataFrame({\n",
+        "    \"A\": np.arange(1, 11),\n",
+        "    \"B\": rng.integers(10, 100, size=10),\n",
+        "    \"C\": rng.choice([\"w\", \"x\", \"y\", \"z\"], size=10)\n",
+        "})\n",
+        "\n",
+        "print(df)\n",
+        "\n",
+        "# Select rows subset\n",
+        "subset = df[df['C'] == 'w']\n",
+        "\n",
+        "print(\"Subset has\", len(subset), \"rows.\")"
+      ],
+      "id": "4273d128",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "eds220-env",
+      "language": "python",
+      "display_name": "EDS-220 env",
+      "path": "/Users/carmengalazgarcia/Library/Jupyter/kernels/eds220-env"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
